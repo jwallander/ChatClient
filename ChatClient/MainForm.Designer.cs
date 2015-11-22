@@ -65,6 +65,7 @@
             this.uxRemotePort.Name = "uxRemotePort";
             this.uxRemotePort.Size = new System.Drawing.Size(100, 20);
             this.uxRemotePort.TabIndex = 2;
+            this.uxRemotePort.TextChanged += new System.EventHandler(this.ValidateConnect);
             // 
             // uxLocalPort
             // 
@@ -140,6 +141,7 @@
             this.uxName.Name = "uxName";
             this.uxName.Size = new System.Drawing.Size(248, 20);
             this.uxName.TabIndex = 10;
+            this.uxName.TextChanged += new System.EventHandler(this.ValidateConnect);
             // 
             // MainForm
             // 

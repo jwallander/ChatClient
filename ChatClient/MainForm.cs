@@ -20,6 +20,7 @@ namespace JonasWallander.ChatClient
             // ReSharper disable once LocalizableElement
             uxRemoteUrl.Text = "http://localhost";
             uxLocalPort.Text = (9090 + instanceNumber).ToString();
+            uxConnect.Enabled = false;
             uxSend.Enabled = false;
         }
 
@@ -67,6 +68,18 @@ namespace JonasWallander.ChatClient
         private void OnFormClosing(object sender, FormClosingEventArgs e)
         {
             Server?.Dispose();
+        }
+
+        private void ValidateConnect(object sender, EventArgs e)
+        {
+            if (!uxRemotePort.Text.Equals(string.Empty) && !uxName.Text.Equals(string.Empty))
+            {
+                uxConnect.Enabled = true;
+            }
+            else
+            {
+                uxConnect.Enabled = false;
+            }
         }
     }
 }
